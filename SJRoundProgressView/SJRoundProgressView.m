@@ -96,13 +96,9 @@
 
 // 触控
 - (void)touchControlWithAngle:(CGFloat)touchMoveAngle {
-    
     CGFloat moveAngel = touchMoveAngle - _r_t_preAngle;
     _r_t_preAngle = touchMoveAngle;
-    NSLog(@"触摸的角度: %f - 移动的角度: %f", touchMoveAngle, moveAngel);
-    
-    if ( moveAngel - touchMoveAngle <= -SJAngle360 ) return;
-    
+    if ( ABS(moveAngel) > 6 ) return;
     _r_endAngle += moveAngel;
     if ( _r_endAngle > SJAngle360 ) _r_endAngle = SJAngle360;
     else if ( _r_endAngle < SJStartAngle ) _r_endAngle = SJStartAngle;
