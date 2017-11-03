@@ -61,7 +61,7 @@
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     
-    UIBezierPath *backgroundBezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(rect.size.width * 0.5, rect.size.height * 0.5) radius:rect.size.width * 0.4 startAngle:SJStartAngle endAngle:SJAngle360  clockwise:YES];
+    UIBezierPath *backgroundBezierPath = [UIBezierPath bezierPathWithArcCenter:CGPointMake(rect.size.width * 0.5, rect.size.height * 0.5) radius:rect.size.width * 0.45 startAngle:SJStartAngle endAngle:SJAngle360  clockwise:YES];
     backgroundBezierPath.lineWidth = SJLineW;
     [[UIColor lightGrayColor] set];
     [backgroundBezierPath stroke];
@@ -98,7 +98,7 @@
 - (void)touchControlWithAngle:(CGFloat)touchMoveAngle {
     CGFloat moveAngel = touchMoveAngle - _r_t_preAngle;
     _r_t_preAngle = touchMoveAngle;
-    if ( ABS(moveAngel) > 6 ) return;
+    if ( ABS(moveAngel) > 1 ) return;
     _r_endAngle += moveAngel;
     if ( _r_endAngle > SJAngle360 ) _r_endAngle = SJAngle360;
     else if ( _r_endAngle < SJStartAngle ) _r_endAngle = SJStartAngle;

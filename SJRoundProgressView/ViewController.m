@@ -34,7 +34,9 @@
     [self slide];
     
     TmpView *tmpView = [TmpView new];
-    tmpView.bounds = CGRectMake(0, 0, 200, 200);
+    tmpView.backgroundColor = [UIColor lightTextColor];
+    tmpView.bounds = CGRectMake(0, 0, 150, 150);
+    tmpView.layer.cornerRadius = tmpView.frame.size.width * 0.5;
     tmpView.center = _progressView.center;
     [self.view addSubview:tmpView];
     
